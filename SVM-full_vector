@@ -1,0 +1,9 @@
+import numpy as np
+def SVM_loss(W, x, y, delta):
+  '''
+  e.g W:10*3073 x:3073*50000 y integer
+  '''
+  out = np.dot(W*x)
+  L_1 = np.max(0, out-out[y]+delta)
+  L_sum = np.sum(L_1)
+  return L_sum
